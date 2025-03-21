@@ -20,6 +20,15 @@ def sum_times(t1, t2):
     sum.hour = t1.hour + t2.hour
     sum.minute = t1.minute + t2.minute
     sum.second = t1.second + t2.second
+
+    #Check if second attribute goes over 60 and increment minute by 1
+    if sum.second >= 60:
+        sum.second -= 60
+        sum.minute += 1
+    #Check if minute attribute goes over 60 and increment hour by 1
+    if sum.minute >= 60:
+        sum.minute -= 60
+        sum.hour += 1
     return sum
 
 def valid_time(t):
